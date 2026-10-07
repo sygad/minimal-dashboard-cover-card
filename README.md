@@ -1,41 +1,52 @@
-# Custom Cover Card
+# Minimal Dashboard Cover Card
 
-A Home Assistant Lovelace card for controlling covers (blinds, shades, shutters, garage doors).
+A simple Home Assistant card with open, stop and close buttons for your blinds, shades and other covers.
 
-- Open / stop / close buttons (shown only if your cover supports them)
-- Position slider
-- Window graphic that shows how far the blind is open
+![Minimal Dashboard Cover Card](Images/Cover%20card%20reference%20design.png)
+
+- Buttons are hidden if your cover doesn't support them
+- Buttons are greyed out when they can't be used (e.g. "Open" when already fully open)
+- Every icon can be changed
 - Visual editor, so you don't need to write YAML
 
 ## Installation (HACS)
 
 1. In Home Assistant, open **HACS**.
 2. Click the **⋮** menu (top right), then **Custom repositories**.
-3. Paste this repository's URL, set **Type** to **Dashboard**, and click **Add**.
-4. Search for **Custom Cover Card**, open it, and click **Download**.
-5. Reload your browser when prompted.
+3. Paste `https://github.com/sygad/minimal-dashboard-cover-card`, set **Type** to **Dashboard**, and click **Add**.
+4. Search for **Minimal Dashboard Cover Card**, open it, and click **Download**.
+5. Refresh your browser.
 
 ## Usage
 
-Edit a dashboard, click **Add card**, and search for **Custom Cover Card**.
+Edit a dashboard, click **Add card**, and search for **Minimal Dashboard Cover Card**.
 
 Or with YAML:
 
 ```yaml
-type: custom:custom-cover-card
+type: custom:minimal-dashboard-cover-card
 entity: cover.living_room_blind
-name: Living Room        # optional
-icon: mdi:blinds         # optional
-show_graphic: true       # optional, default true
-show_slider: true        # optional, default true
+open_icon: mdi:arrow-up-thin              # optional
+stop_icon: mdi:square-rounded-outline     # optional
+close_icon: mdi:arrow-down-thin           # optional
 ```
 
 ## Options
 
-| Option         | Type    | Default        | Description                       |
-| -------------- | ------- | -------------- | --------------------------------- |
-| `entity`       | string  | **required**   | A `cover.` entity                 |
-| `name`         | string  | friendly name  | Card title                        |
-| `icon`         | string  | shutter icon   | Header icon                       |
-| `show_graphic` | boolean | `true`         | Show the window/blind graphic     |
-| `show_slider`  | boolean | `true`         | Show the position slider          |
+| Option       | Default                      | Description                |
+| ------------ | ---------------------------- | -------------------------- |
+| `entity`     | **required**                 | A `cover.` entity          |
+| `open_icon`  | `mdi:arrow-up-thin`          | Icon on the open button    |
+| `stop_icon`  | `mdi:square-rounded-outline` | Icon on the stop button    |
+| `close_icon` | `mdi:arrow-down-thin`        | Icon on the close button   |
+
+## Theme colours (optional)
+
+You can change the colours from your theme with these variables:
+
+| Variable                         | Default   |
+| -------------------------------- | --------- |
+| `mdc-cover-card-background`      | `#01152f` |
+| `mdc-cover-button-background`    | `#002c65` |
+| `mdc-cover-icon-color`           | `#ffffff` |
+| `mdc-cover-icon-size`            | `40px`    |

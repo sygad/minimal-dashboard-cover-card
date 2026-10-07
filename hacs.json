@@ -1,6 +1,6 @@
 {
-  "name": "Custom Cover Card",
-  "filename": "custom-cover-card.js",
+  "name": "Minimal Dashboard Cover Card",
+  "filename": "minimal-dashboard-cover-card.js",
   "render_readme": true,
   "homeassistant": "2024.1.0"
 }
