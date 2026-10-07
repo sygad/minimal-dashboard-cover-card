@@ -1,0 +1,6 @@
+{
+  "name": "Custom Cover Card",
+  "filename": "custom-cover-card.js",
+  "render_readme": true,
+  "homeassistant": "2024.1.0"
+}
